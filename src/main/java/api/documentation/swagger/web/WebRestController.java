@@ -47,4 +47,10 @@ public class WebRestController {
                 .note(note)
                 .build());
     }
+
+    @ApiOperation(value = "delete", notes = "github.com/hong-il")
+    @DeleteMapping("/delete")
+    public void HeroDeleteRequest(@RequestParam Long id) {
+        heroRepository.deleteById(id);
+    }
 }
