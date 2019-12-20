@@ -27,7 +27,8 @@ public class Hero extends BaseTimeEntity {
     private String note;
 
     @Builder
-    public Hero(String name, int age, String note) {
+    public Hero(Long id, String name, int age, String note) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.note = note;
