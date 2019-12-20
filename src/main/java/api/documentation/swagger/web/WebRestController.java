@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Api(tags = {"1. Hero"})
 @RestController
 @AllArgsConstructor
@@ -24,5 +26,11 @@ public class WebRestController {
                 .age(age)
                 .note(note)
                 .build());
+    }
+
+    @ApiOperation(value = "findAll", notes = "github.com/hong-il")
+    @GetMapping("/findAll")
+    public List<Hero> HeroFindAllResponse() {
+        return heroRepository.findAll();
     }
 }
